@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Data</title>
+</head>
+<body>
+    <h1>Form Data from Google Sheets</h1>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Photo</th>
+            <th>CV</th>
+            <th>Feedback</th>
+            <th>Timestamp</th>     Added timestamp to display 
+        </tr>
+        {% for response in data %}
+        <tr>
+            <td>{{ response.name }}</td>
+            <td>{{ response.address }}</td>
+            <td>{{ response.email }}</td>
+            <td><a href="{{ response.photo.url }}">View Photo</a></td>
+            <td>
+                {% if response.cv %}
+                    <a href="{{ response.cv.url }}">View CV</a>
+                {% else %}
+                    No CV
+                <!-- {% endif %} -->
+            </td>
+            <td>{{ response.feedback }}</td>
+            <td>{{ response.timestamp }}</td> <!-- Added timestamp value -->
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html> 
