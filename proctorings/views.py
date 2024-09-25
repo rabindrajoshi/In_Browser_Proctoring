@@ -61,7 +61,7 @@ def save_sheet_data_to_model(data):
     for index, row in enumerate(data):
         if index == 0:  # This is the header row
             continue
-        
+        print(f"length: {len(row)}, data: {row}")
         if len(row) < 6:
             continue  # Skip rows that don't have enough data
 

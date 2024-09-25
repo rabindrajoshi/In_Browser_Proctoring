@@ -1,0 +1,9 @@
+.idea/
+.myenv/
+db.sqlite3
+# ignore python cache files
+*.pyc
+# ignore media internal files
+media/cvs/*
+media/photos/*
+.DS_Store
