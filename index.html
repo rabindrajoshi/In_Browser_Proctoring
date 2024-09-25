@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam System</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .question-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+        }
+
+        .question-text {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .option-label {
+            font-size: 1rem;
+        }
+
+        .timer {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            background-color: #ffc107;
+            padding: 15px;
+            border-radius: 10px;
+            color: #fff;
+        }
+
+        .submit-btn {
+            background-color: #28a745;
+            color: #fff;
+            font-size: 1.25rem;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h1 class="text-center mb-4">Online Exam</h1>
+
+                <!-- Timer Section -->
+                <div id="timer" class="timer">Time Left: <span id="time"></span></div>
+
+                <!-- Questions Section -->
+                <form id="exam-form">
+                    <!-- Question 1 -->
+                    <div class="question-card">
+                        <div class="question-text">1. What is the value of π (Pi) approximately?</div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" id="q1a" value="A">
+                            <label class="form-check-label option-label" for="q1a">A. 3.14</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" id="q1b" value="B">
+                            <label class="form-check-label option-label" for="q1b">B. 2.71</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" id="q1c" value="C">
+                            <label class="form-check-label option-label" for="q1c">C. 1.41</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" id="q1d" value="D">
+                            <label class="form-check-label option-label" for="q1d">D. 0.57</label>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="question-card">
+                        <div class="question-text">2. What is the chemical symbol for water?</div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" id="q2a" value="A">
+                            <label class="form-check-label option-label" for="q2a">A. O2</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" id="q2b" value="B">
+                            <label class="form-check-label option-label" for="q2b">B. H2O</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" id="q2c" value="C">
+                            <label class="form-check-label option-label" for="q2c">C. CO2</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" id="q2d" value="D">
+                            <label class="form-check-label option-label" for="q2d">D. NaCl</label>
+                        </div>
+                    </div>
+
+                    <!-- Add more questions here -->
+
+                    <!-- Submit Button -->
+                    <div class="text-center mt-4">
+                        <button type="submit" class="submit-btn">Submit Exam</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Timer Logic -->
+    <script>
+        let totalTime = 5 * 60; // 5 minutes in seconds
+        const timerElement = document.getElementById("time");
+
+        function startTimer() {
+            const timer = setInterval(() => {
+                let minutes = Math.floor(totalTime / 60);
+                let seconds = totalTime % 60;
+
+                // Add leading zero if seconds are less than 10
+                if (seconds < 10) {
+                    seconds = '0' + seconds;
+                }
+
+                timerElement.textContent = `${minutes}:${seconds}`;
+
+                if (totalTime === 0) {
+                    clearInterval(timer);
+                    alert("Time's up!");
+                    document.getElementById("exam-form").submit(); // Auto submit when time is up
+                }
+
+                totalTime--;
+            }, 1000);
+        }
+
+        // Start the timer when the page loads
+        window.onload = startTimer;
+    </script>
+</body>
+
+</html>
