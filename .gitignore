@@ -1,0 +1,11 @@
+# Ignore Python virtual environments
+/venv
+
+# Ignore Google Cloud Service Account Credentials (replace with the actual path)
+/path/to/google-cloud-credentials.json
+
+# Ignore shape predictor model (large file)
+proctoring_systems/shape_predictor_model/shape_predictor_68_face_landmarks.dat
+
+# Ignore any other sensitive files or large files here
+proctoring_systems/proctorings/decent-envoy-436203-c9-ab5ba84d0fcb.json

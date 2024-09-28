@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Proctoring System</title>
+    <style>
+        /* CSS Styling for Home Page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* Lighter blue background */
+            color: #333; /* Text color */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            background: #ffffff; /* White background for the container */
+            border-radius: 10px; /* Increased border radius */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Darker shadow */
+            text-align: center;
+        }
+
+        h1 {
+            color: #2E8B57; /* Dark green color for the heading */
+        }
+
+        p {
+            font-size: 20px; /* Slightly larger font size */
+            margin-bottom: 20px;
+        }
+
+        .start-exam-btn {
+            background-color: #2E8B57; /* Dark green button color */
+            color: white;
+            padding: 15px 32px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px; /* Slightly larger button text */
+            transition: background-color 0.3s;
+        }
+
+        .start-exam-btn:hover {
+            background-color: #245d43; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Proctoring System</h1>
+        <p>Ready to take your exam? Click the button below to start.</p>
+        <form method="POST" action="{% url 'exam_page' %}">
+            {% csrf_token %}
+            <button type="submit" class="start-exam-btn">Start Exam</button>
+        </form>
+    </div>
+</body>
+</html>

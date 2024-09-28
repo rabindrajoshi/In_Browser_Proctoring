@@ -1,0 +1,6 @@
+{'time': '00:03:05', 'status': 'No Cheating Detected', 'details': 'Face Count: 1, Detected Objects: [], Head Pose: -1, Audio: No suspicious audio detected'}
+{'time': '00:03:15', 'status': 'No Cheating Detected', 'details': 'Face Count: 1, Detected Objects: [], Head Pose: Head Up, Audio: No suspicious audio detected'}
+{'time': '00:03:25', 'status': 'No Cheating Detected', 'details': 'Face Count: 1, Detected Objects: [], Head Pose: Head Down, Audio: No suspicious audio detected'}
+{'time': '00:03:35', 'status': 'No Cheating Detected', 'details': 'Face Count: 0, Detected Objects: [], Head Pose: No head detected., Audio: No suspicious audio detected'}
+{'time': '00:03:45', 'status': 'No Cheating Detected', 'details': 'Face Count: 1, Detected Objects: [], Head Pose: Head Down, Audio: No suspicious audio detected'}
+{'time': '00:03:55', 'status': 'Cheating Detected', 'details': "Face Count: 1, Detected Objects: [('cell phone', 0.7460689544677734), ('person', 0.5852885246276855)], Head Pose: Head Down, Audio: No suspicious audio detected"}
